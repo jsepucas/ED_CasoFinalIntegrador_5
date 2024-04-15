@@ -2,7 +2,7 @@ package A_AnalisisGenomico;
 
 public class ConteoGenes {
 
-    public static int contarGenes(String cadena) {
+    public static int contarGenes(String dna) {
         if (dna.isEmpty()) {
             return 0;
         }
@@ -12,8 +12,15 @@ public class ConteoGenes {
             return 0;
         }
 
-        return 0;
+        return 1 + contarGenes(dna.substring(index + 3));
+    }
 
-
+    public static void main (String[] args) {
+        String dna = "ATGTAAGATGCCCTAGT";
+        System.out.println("Número de genes: " + contarGenes(dna));
+    }
 
 }
+
+
+
