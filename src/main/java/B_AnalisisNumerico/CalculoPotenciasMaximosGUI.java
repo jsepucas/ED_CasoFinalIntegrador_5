@@ -44,4 +44,20 @@ public class CalculoPotenciasMaximosGUI {
                 maxResultLabel.setText("Máximo: " + result);
             }
         });
+
+        add(new JLabel("Base:"));
+        add(baseField);
+        add(new JLabel("Exponente:"));
+        add(exponenteField);
+        add(calculatePowerButton);
+        add(powerResultLabel);
+        add(new JLabel("Array (comma separated):"));
+        add(arrayField);
+        add(findMaxButton);
+        add(maxResultLabel);
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
 }
