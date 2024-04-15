@@ -20,3 +20,11 @@ private static void generarCombinacionesRecursivo(String current, String[] bases
     for (String base : bases) {
         generarCombinacionesRecursivo(current + base, bases, n, result);
     }
+}
+    public static void main(String[] args) {
+    int tamaño = 3;
+    List<String> combinaciones = generarCombinaciones(tamaño);
+    System.out.println("Combinaciones genéticas de tamaño " + tamaño + ":");
+    combinaciones.forEach(System.out::println);
+    }
+}
