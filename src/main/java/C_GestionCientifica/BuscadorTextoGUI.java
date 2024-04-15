@@ -22,6 +22,13 @@ public class BuscadorTextoGUI {
             setSize(500, 400);
             setLayout(new BorderLayout());
 
+            textArea = new JTextArea();
+            searchField = new JTextField(20);
+            loadButton = new JButton("Cargar Documento");
+            searchButton = new JButton("Buscar");
+            resultLabel = new JLabel("Resultados de la búsqueda aparecerán aquí");
+            fileChooser = new JFileChooser();
+
 
 
     }
