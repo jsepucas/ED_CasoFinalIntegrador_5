@@ -9,4 +9,13 @@ public class SumatoriaListado {
             return n + sumatoriaRecursiva(n - 1);
         }
     }
+
+    public static List<Integer> listarNumeros(int desde, int hasta) {
+        List<Integer> lista = new ArrayList<>();
+        if (desde <= hasta) {
+            listarNumerosRecursivo(desde, hasta, lista);
+        }
+        return lista;
+    }
+
 }
