@@ -12,4 +12,10 @@ public class OrganizadorDocumentos {
         return lineas;
     }
 
+    public static void guardarDocumentoOrdenado(List<String> lineas, String outputPath) throws IOException {
+        Path file = Paths.get(outputPath);
+        Files.write(file, lineas);
+    }
+
+
 }
