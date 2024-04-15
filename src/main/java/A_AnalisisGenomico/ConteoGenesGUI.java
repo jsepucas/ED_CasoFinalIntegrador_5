@@ -1,6 +1,7 @@
 package A_AnalisisGenomico;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class ConteoGenesGUI extends JFrame {
