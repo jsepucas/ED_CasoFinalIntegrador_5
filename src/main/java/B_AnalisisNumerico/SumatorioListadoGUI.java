@@ -13,3 +13,9 @@ public class SumatoriaListadoGUI extends JFrame {
     private JTextField inputFieldDesde, inputFieldHasta;
     private JButton listNumbersButton;
     private JTextArea listResultArea;
+
+    public SumatoriaListadoGUI() {
+        super("Sumatoria y Listado de Números");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 300);
+        setLayout(new FlowLayout());
