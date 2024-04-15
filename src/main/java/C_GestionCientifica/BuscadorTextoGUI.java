@@ -14,3 +14,9 @@ public class BuscadorTextoGUI extends JFrame {
     private JButton loadButton, searchButton;
     private JFileChooser fileChooser;
     private JLabel resultLabel;
+
+    public BuscadorTextoGUI() {
+        super("Buscador de Texto");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(600, 400);
+        setLayout(new BorderLayout());
