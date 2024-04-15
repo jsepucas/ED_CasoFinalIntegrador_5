@@ -31,3 +31,13 @@ public class CalculoDeCombinacionesGUI extends JFrame {
             }
         });
 
+
+        add(new JLabel("Tamaño:"));
+        add(inputField);
+        add(generateButton);
+        add(new JScrollPane(resultArea));
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
