@@ -18,10 +18,10 @@ public class MainGUI extends JFrame {
         setSize(600, 400);
         setLayout(new FlowLayout());
 
-        btnConteoGenes = new JButton("Conteo de Genes");
-        btnCalculoCombinaciones = new JButton("Cálculo de Combinaciones");
-        btnSumatoriaListado = new JButton("Sumatoria y Listado de Números");
-        btnCalculoPotenciasMaximos = new JButton("Cálculo de Potencias y Máximos");
+        btnConteoGenes = new JButton("Conteo de Genes \uD83D\uDD22 ");
+        btnCalculoCombinaciones = new JButton("Cálculo de Combinaciones  ✖\uFE0F ➕ ➖ ➗");
+        btnSumatoriaListado = new JButton("Sumatoria y Listado de Números  \uD83D\uDCC3");
+        btnCalculoPotenciasMaximos = new JButton("Cálculo de Potencias y Máximos  0\uFE0F⃣  1\uFE0F⃣  2\uFE0F⃣   3\uFE0F⃣  ");
 
         btnConteoGenes.addActionListener(e -> new ConteoGenesGUI());
         btnCalculoCombinaciones.addActionListener(e -> new CalculoDeCombinacionesGUI());
