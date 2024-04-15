@@ -12,8 +12,11 @@ public class CalculoDeCombinaciones {
         return result;
     }
 
-private static void generarCombinacionesRecursivo(String current, String[] bases, int n, List<sTRING> result) {
+private static void generarCombinacionesRecursivo(String current, String[] bases, int n, List<String> result) {
         if (current.length() == n) {
             result.add(current);
             return;
         }
+    for (String base : bases) {
+        generarCombinacionesRecursivo(current + base, bases, n, result);
+    }
