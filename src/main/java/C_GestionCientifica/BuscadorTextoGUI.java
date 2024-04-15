@@ -29,6 +29,18 @@ public class BuscadorTextoGUI {
             resultLabel = new JLabel("Resultados de la búsqueda aparecerán aquí");
             fileChooser = new JFileChooser();
 
+            loadButton.addActionListener(e -> {
+                int returnVal = fileChooser.showOpenDialog(BuscadorTextoGUI.this);
+                if (returnVal == JFileChooser.APPROVE_OPTION) {
+                    try {
+                        List<String> lines = Files.readAllLines(fileChooser.getSelectedFile().toPath());
+                        textArea.setText(String.join("\n", lines));
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(this, "Error al cargar el archivo.");
+                    }
+                }
+            });
+
 
 
     }
