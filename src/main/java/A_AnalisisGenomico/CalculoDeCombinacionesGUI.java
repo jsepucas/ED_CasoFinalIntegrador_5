@@ -23,11 +23,21 @@ public class CalculoDeCombinacionesGUI extends JFrame {
 
         generateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                int n = Integer.parseInt(inputField.getText());
-                List<String> combinaciones = CalculoDeCombinaciones.generarCombinaciones(n);
-                resultArea.setText("");  // Limpiar área de resultados
-                for (String comb : combinaciones) {
-                    resultArea.append(comb + "\n");
+                try {
+                    int n = Integer.parseInt(inputField.getText());
+                    if (n < 1 || n > 10) {
+                        JOptionPane.showMessageDialog(null, "Por favor, ingrese un número entre 1 y 10.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+                        resultArea.setText("");
+                    } else {
+                        List<String> combinaciones = CalculoDeCombinaciones.generarCombinaciones(n);
+                        resultArea.setText("");
+                        for (String comb : combinaciones) {
+                            resultArea.append(comb + "\n");
+                        }
+                    }
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(null, "Por favor, ingrese un número válido.", "Error de entrada", JOptionPane.ERROR_MESSAGE);
+                    resultArea.setText("");
                 }
             }
         });
