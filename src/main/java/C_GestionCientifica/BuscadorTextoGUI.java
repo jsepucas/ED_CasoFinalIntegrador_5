@@ -20,3 +20,10 @@ public class BuscadorTextoGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
         setLayout(new BorderLayout());
+
+        textArea = new JTextArea();
+        searchField = new JTextField(20);
+        loadButton = new JButton("Cargar Documento");
+        searchButton = new JButton("Buscar Palabra");
+        resultLabel = new JLabel("Resultados de la búsqueda aparecerán aquí");
+        fileChooser = new JFileChooser();
