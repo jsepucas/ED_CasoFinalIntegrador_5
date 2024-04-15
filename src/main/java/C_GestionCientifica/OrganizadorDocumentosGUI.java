@@ -56,3 +56,14 @@ public class OrganizadorDocumentosGUI extends JFrame {
         panel.add(saveButton);
 
 
+        add(new JScrollPane(textArea), BorderLayout.CENTER);
+        add(panel, BorderLayout.SOUTH);
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new OrganizadorDocumentosGUI();
+    }
+
