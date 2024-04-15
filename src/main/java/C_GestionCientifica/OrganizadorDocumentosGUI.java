@@ -32,3 +32,15 @@ public class OrganizadorDocumentosGUI extends JFrame {
             }
         });
 
+        saveButton.addActionListener(e -> {
+            int returnVal = fileChooser.showSaveDialog(OrganizadorDocumentosGUI.this);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                try {
+                    Files.write(fileChooser.getSelectedFile().toPath(), textArea.getText().getBytes());
+                    JOptionPane.showMessageDialog(this, "Archivo guardado correctamente.");
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(this, "Error al guardar el archivo.");
+                }
+            }
+        });
+
