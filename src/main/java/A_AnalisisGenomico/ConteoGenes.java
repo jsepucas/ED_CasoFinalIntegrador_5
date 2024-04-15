@@ -7,4 +7,11 @@ public class ConteoGenes {
             return 0;
         }
 
+        int index = dna.indexOf("ATG");
+        if (index == -1) {
+            return 0;
+        }
+
+
+
 }
