@@ -15,7 +15,7 @@ public class SumatoriaListadoGUI extends JFrame {
     private JTextArea listResultArea;
 
     public SumatoriaListadoGUI() {
-        super("Sumatoria y Listado de Números");
+        super("Sumatoria y Listado de Números (UAX) ");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
         setLayout(new FlowLayout());
@@ -46,7 +46,7 @@ public class SumatoriaListadoGUI extends JFrame {
             }
         });
 
-        add(new JLabel("Ingrese n para sumatoria:"));
+        add(new JLabel("Ingrese número para sumatoria:"));
         add(inputFieldSumatoria);
         add(calculateSumButton);
         add(sumResultLabel);
