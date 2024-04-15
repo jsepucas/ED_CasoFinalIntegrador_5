@@ -17,3 +17,17 @@ public class CalculoDeCombinacionesGUI extends JFrame {
         generateButton = new JButton("Generar");
         resultArea = new JTextArea(10, 20);
         resultArea.setEditable(false);
+
+
+
+        generateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int n = Integer.parseInt(inputField.getText());
+                List<String> combinaciones = CalculoDeCombinaciones.generarCombinaciones(n);
+                resultArea.setText("");  // Limpiar área de resultados
+                for (String comb : combinaciones) {
+                    resultArea.append(comb + "\n");
+                }
+            }
+        });
+
