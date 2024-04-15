@@ -1,4 +1,7 @@
+package A_AnalisisGenomico;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 import java.util.List;
 
@@ -18,8 +21,6 @@ public class CalculoDeCombinacionesGUI extends JFrame {
         resultArea = new JTextArea(10, 20);
         resultArea.setEditable(false);
 
-
-
         generateButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int n = Integer.parseInt(inputField.getText());
@@ -30,7 +31,6 @@ public class CalculoDeCombinacionesGUI extends JFrame {
                 }
             }
         });
-
 
         add(new JLabel("Tamaño:"));
         add(inputField);
@@ -45,4 +45,3 @@ public class CalculoDeCombinacionesGUI extends JFrame {
         new CalculoDeCombinacionesGUI();
     }
 }
-
