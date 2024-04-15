@@ -56,3 +56,17 @@ public class BuscadorTextoGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "Por favor, cargue un documento primero.");
             }
         });
+
+        JPanel panel = new JPanel();
+        panel.add(loadButton);
+        panel.add(new JLabel("Buscar Palabra:"));
+        panel.add(searchField);
+        panel.add(searchButton);
+
+        add(new JScrollPane(textArea), BorderLayout.CENTER);
+        add(panel, BorderLayout.NORTH);
+        add(resultLabel, BorderLayout.SOUTH);
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
