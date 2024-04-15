@@ -1,6 +1,10 @@
+package C_GestionCientifica;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 public class OrganizadorDocumentosGUI extends JFrame {
@@ -10,7 +14,7 @@ public class OrganizadorDocumentosGUI extends JFrame {
 
     public OrganizadorDocumentosGUI() {
         super("Organizador de Documentos");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 300);
         setLayout(new BorderLayout());
 
@@ -66,4 +70,5 @@ public class OrganizadorDocumentosGUI extends JFrame {
     public static void main(String[] args) {
         new OrganizadorDocumentosGUI();
     }
+}
 
