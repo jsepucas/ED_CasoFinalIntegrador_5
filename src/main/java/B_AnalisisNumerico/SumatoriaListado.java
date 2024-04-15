@@ -18,4 +18,11 @@ public class SumatoriaListado {
         return lista;
     }
 
+    private static void listarNumerosRecursivo(int current, int hasta, List<Integer> lista) {
+        lista.add(current);
+        if (current < hasta) {
+            listarNumerosRecursivo(current + 1, hasta, lista);
+        }
+    }
+
 }
