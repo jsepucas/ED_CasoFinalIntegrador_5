@@ -12,3 +12,8 @@ public class CalculoDeCombinacionesGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(350, 300);
         setLayout(new FlowLayout());
+
+        inputField = new JTextField(5);
+        generateButton = new JButton("Generar");
+        resultArea = new JTextArea(10, 20);
+        resultArea.setEditable(false);
