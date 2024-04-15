@@ -7,3 +7,10 @@ import java.util.List;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
+
+public class BuscadorTextoGUI extends JFrame {
+    private JTextArea textArea;
+    private JTextField searchField;
+    private JButton loadButton, searchButton;
+    private JFileChooser fileChooser;
+    private JLabel resultLabel;
