@@ -25,4 +25,13 @@ public class SumatoriaListado {
         }
     }
 
+    public static void main(String[] args) {
+        int resultadoSumatoria = sumatoriaRecursiva(10);
+        System.out.println("Sumatoria de 10 es: " + resultadoSumatoria);
+
+        List<Integer> numeros = listarNumeros(1, 10);
+        System.out.println("Números del 1 al 10:");
+        numeros.forEach(System.out::println);
+    }
+
 }
