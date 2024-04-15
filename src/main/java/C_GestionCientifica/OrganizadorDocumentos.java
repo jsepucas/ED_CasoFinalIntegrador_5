@@ -17,7 +17,4 @@ public class OrganizadorDocumentos {
         Files.write(file, lineas);
     }
 
-
-
-
 }
