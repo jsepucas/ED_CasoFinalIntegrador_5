@@ -30,3 +30,18 @@ public class SumatoriaListadoGUI extends JFrame {
                 sumResultLabel.setText("Sumatoria: " + result);
             }
         });
+
+        inputFieldDesde = new JTextField(5);
+        inputFieldHasta = new JTextField(5);
+        listNumbersButton = new JButton("Listar Números");
+        listResultArea = new JTextArea(5, 20);
+        listResultArea.setEditable(false);
+        listNumbersButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int desde = Integer.parseInt(inputFieldDesde.getText());
+                int hasta = Integer.parseInt(inputFieldHasta.getText());
+                List<Integer> numeros = SumatoriaListado.listarNumeros(desde, hasta);
+                listResultArea.setText(""); // Clear previous results
+                numeros.forEach(num -> listResultArea.append(num + "\n"));
+            }
+        });
