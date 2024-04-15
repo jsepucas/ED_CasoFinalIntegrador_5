@@ -27,4 +27,4 @@ public class CalculoPotenciasMaximos {
         System.out.println("El máximo es: " + maximo);
     }
 }
-}
+
