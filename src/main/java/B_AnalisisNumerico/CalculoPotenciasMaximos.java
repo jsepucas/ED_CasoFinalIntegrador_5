@@ -9,4 +9,12 @@ public class CalculoPotenciasMaximos {
             return base * calcularPotencia(base, exponente - 1);
         }
     }
+
+    public static int encontrarMaximo(int[] datos, int indice) {
+        if (indice == 0) {
+            return datos[0];
+        } else {
+            return Math.max(datos[indice], encontrarMaximo(datos, indice - 1));
+        }
+    }
 }
