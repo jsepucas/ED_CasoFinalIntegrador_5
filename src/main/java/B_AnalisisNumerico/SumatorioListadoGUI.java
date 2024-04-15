@@ -19,3 +19,14 @@ public class SumatoriaListadoGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(400, 300);
         setLayout(new FlowLayout());
+
+        inputFieldSumatoria = new JTextField(5);
+        calculateSumButton = new JButton("Calcular Sumatoria");
+        sumResultLabel = new JLabel("Resultado sumatoria aquí");
+        calculateSumButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int n = Integer.parseInt(inputFieldSumatoria.getText());
+                int result = SumatoriaListado.sumatoriaRecursiva(n);
+                sumResultLabel.setText("Sumatoria: " + result);
+            }
+        });
