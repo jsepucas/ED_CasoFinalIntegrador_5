@@ -30,4 +30,19 @@ public class FechaGUI extends JFrame {
         editButton = new JButton("Editar");
         deleteButton = new JButton("Eliminar");
         sortButton = new JButton("Ordenar");
+
+        String[] columnNames = {"Fecha", "Descripción"};
+        tableModel = new DefaultTableModel(columnNames, 0);
+        fechasTable = new JTable(tableModel);
+
+        addButton.addActionListener(e -> {
+            try {
+                LocalDate fecha = LocalDate.parse(fechaField.getText(), DateTimeFormatter.ISO_DATE);
+                String descripcion = descripcionField.getText();
+                fechas.add(new Fecha(fecha, descripcion));
+                tableModel.addRow(new Object[]{fecha, descripcion});
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this, "Formato de fecha no válido. Use YYYY-MM-DD.");
+            }
+        });
 }
