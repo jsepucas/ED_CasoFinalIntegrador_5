@@ -16,7 +16,7 @@ public class SumatoriaListadoGUI extends JFrame {
 
     public SumatoriaListadoGUI() {
         super("Sumatoria y Listado de Números (UAX) ");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(400, 300);
         setLayout(new FlowLayout());
 

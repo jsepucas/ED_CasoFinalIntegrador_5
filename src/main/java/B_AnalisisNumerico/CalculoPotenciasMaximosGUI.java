@@ -13,7 +13,7 @@ public class CalculoPotenciasMaximosGUI extends JFrame {
 
     public CalculoPotenciasMaximosGUI() {
         super("Cálculo de Potencias y Máximos");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(500, 200);
         setLayout(new FlowLayout());
 

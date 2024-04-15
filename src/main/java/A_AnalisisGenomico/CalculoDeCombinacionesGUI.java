@@ -12,7 +12,7 @@ public class CalculoDeCombinacionesGUI extends JFrame {
 
     public CalculoDeCombinacionesGUI() {
         super("Calculo de Combinaciones Genéticas");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setSize(350, 300);
         setLayout(new FlowLayout());
 
