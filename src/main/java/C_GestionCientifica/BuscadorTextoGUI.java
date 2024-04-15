@@ -41,6 +41,15 @@ public class BuscadorTextoGUI {
                 }
             });
 
+            searchButton.addActionListener(e -> {
+                try {
+                    List<Integer> lineNumbers = BuscadorTexto.buscarPalabra(fileChooser.getSelectedFile().getPath(), searchField.getText());
+                    resultLabel.setText("Palabra encontrada en líneas: " + lineNumbers);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(this, "Error al buscar en el documento.");
+                }
+            });
+
 
 
     }
