@@ -19,4 +19,14 @@ public class BuscadorTexto {
         return lineasEncontradas;
     }
 
+    public static void main(String[] args) {
+        try {
+            List<Integer> resultados = buscarPalabra("documento.txt", "genética");
+            System.out.println("La palabra se encontró en las líneas: " + resultados);
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo: " + e.getMessage());
+        }
+    }
+}
+
 }
