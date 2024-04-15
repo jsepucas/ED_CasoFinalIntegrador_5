@@ -5,13 +5,15 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.Arrays;
+import java.nio.file.Paths;
+import java.util.Collections;
 import java.util.List;
 
 public class OrganizadorDocumentosGUI extends JFrame {
     private JTextArea textArea;
     private JButton loadButton, saveButton, sortButton;
     private JFileChooser fileChooser;
+    private List<String> lines;
 
     public OrganizadorDocumentosGUI() {
         super("Organizador de Documentos");
@@ -29,7 +31,7 @@ public class OrganizadorDocumentosGUI extends JFrame {
             int returnVal = fileChooser.showOpenDialog(OrganizadorDocumentosGUI.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 try {
-                    List<String> lines = Files.readAllLines(fileChooser.getSelectedFile().toPath());
+                    lines = Files.readAllLines(fileChooser.getSelectedFile().toPath());
                     textArea.setText(String.join("\n", lines));
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this, "Error al cargar el archivo.");
@@ -41,7 +43,7 @@ public class OrganizadorDocumentosGUI extends JFrame {
             int returnVal = fileChooser.showSaveDialog(OrganizadorDocumentosGUI.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 try {
-                    Files.write(fileChooser.getSelectedFile().toPath(), textArea.getText().getBytes());
+                    Files.write(fileChooser.getSelectedFile().toPath(), String.join("\n", lines).getBytes());
                     JOptionPane.showMessageDialog(this, "Archivo guardado correctamente.");
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this, "Error al guardar el archivo.");
@@ -50,8 +52,7 @@ public class OrganizadorDocumentosGUI extends JFrame {
         });
 
         sortButton.addActionListener(e -> {
-            String[] lines = textArea.getText().split("\n");
-                Arrays.sort(lines);
+            Collections.sort(lines);
             textArea.setText(String.join("\n", lines));
         });
 
@@ -59,7 +60,6 @@ public class OrganizadorDocumentosGUI extends JFrame {
         panel.add(loadButton);
         panel.add(sortButton);
         panel.add(saveButton);
-
 
         add(new JScrollPane(textArea), BorderLayout.CENTER);
         add(panel, BorderLayout.SOUTH);
@@ -72,4 +72,3 @@ public class OrganizadorDocumentosGUI extends JFrame {
         new OrganizadorDocumentosGUI();
     }
 }
-
