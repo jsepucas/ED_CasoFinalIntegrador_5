@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class CalculoPotenciasMaximosGUI {
+public class CalculoPotenciasMaximosGUI extends JFrame {
 
     private JTextField baseField, exponenteField, arrayField;
     private JButton calculatePowerButton, findMaxButton;
@@ -59,5 +59,7 @@ public class CalculoPotenciasMaximosGUI {
         setLocationRelativeTo(null);
         setVisible(true);
     }
-
+    public static void main(String[] args) {
+        new CalculoPotenciasMaximosGUI();
+    }
 }
