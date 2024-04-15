@@ -29,4 +29,19 @@ public class CalculoPotenciasMaximosGUI {
                 powerResultLabel.setText("Potencia: " + result);
             }
         });
+
+        arrayField = new JTextField(20);
+        findMaxButton = new JButton("Encontrar Máximo");
+        maxResultLabel = new JLabel("Máximo aquí");
+        findMaxButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String[] parts = arrayField.getText().split(",");
+                int[] datos = new int[parts.length];
+                for (int i = 0; i < parts.length; i++) {
+                    datos[i] = Integer.parseInt(parts[i].trim());
+                }
+                int result = CalculoPotenciasMaximos.encontrarMaximo(datos, datos.length - 1);
+                maxResultLabel.setText("Máximo: " + result);
+            }
+        });
 }
