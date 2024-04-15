@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class FechaGUI {
+public class FechaGUI extends JFrame {
 
     private JTextField fechaField, descripcionField;
     private JButton addButton, editButton, deleteButton, sortButton;
@@ -23,4 +23,11 @@ public class FechaGUI {
         setSize(600, 400);
         fechas = new ArrayList<>();
         setLayout(new BorderLayout());
+
+        fechaField = new JTextField(10);
+        descripcionField = new JTextField(20);
+        addButton = new JButton("Agregar");
+        editButton = new JButton("Editar");
+        deleteButton = new JButton("Eliminar");
+        sortButton = new JButton("Ordenar");
 }
