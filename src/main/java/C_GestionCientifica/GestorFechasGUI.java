@@ -1,16 +1,15 @@
 package C_GestionCientifica;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class FechaGUI extends JFrame {
-
+public class GestorFechasGUI extends JFrame {
     private JTextField fechaField, descripcionField;
     private JButton addButton, editButton, deleteButton, sortButton;
     private JTable fechasTable;
@@ -19,8 +18,8 @@ public class FechaGUI extends JFrame {
 
     public GestorFechasGUI() {
         super("Gestor de Fechas");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 400);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setSize(1000, 500);
         fechas = new ArrayList<>();
         setLayout(new BorderLayout());
 
@@ -46,8 +45,16 @@ public class FechaGUI extends JFrame {
             }
         });
 
+        deleteButton.addActionListener(e -> {
+            int selectedRow = fechasTable.getSelectedRow();
+            if (selectedRow != -1) {
+                fechas.remove(selectedRow);
+                tableModel.removeRow(selectedRow);
+            }
+        });
+
         sortButton.addActionListener(e -> {
-            fechas.sort(Fecha.compararPorFecha);
+            fechas.sort(Fecha::compararPorFecha);
             actualizarTabla();
         });
 
@@ -78,5 +85,4 @@ public class FechaGUI extends JFrame {
     public static void main(String[] args) {
         new GestorFechasGUI();
     }
-
 }
