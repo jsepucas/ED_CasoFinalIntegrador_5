@@ -56,6 +56,18 @@ public class BuscadorTextoGUI {
             panel.add(searchField);
             panel.add(searchButton);
 
+            add(new JScrollPane(textArea), BorderLayout.CENTER);
+            add(panel, BorderLayout.NORTH);
+            add(resultLabel, BorderLayout.SOUTH);
+
+            setLocationRelativeTo(null);
+            setVisible(true);
+        }
+
+        public void main(String[] args) {
+            new BuscadorTextoGUI();
+        }
+
 
 
 
