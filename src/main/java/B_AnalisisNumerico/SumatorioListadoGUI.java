@@ -45,3 +45,14 @@ public class SumatoriaListadoGUI extends JFrame {
                 numeros.forEach(num -> listResultArea.append(num + "\n"));
             }
         });
+
+        add(new JLabel("Ingrese n para sumatoria:"));
+        add(inputFieldSumatoria);
+        add(calculateSumButton);
+        add(sumResultLabel);
+        add(new JLabel("Desde:"));
+        add(inputFieldDesde);
+        add(new JLabel("Hasta:"));
+        add(inputFieldHasta);
+        add(listNumbersButton);
+        add(new JScrollPane(listResultArea));
