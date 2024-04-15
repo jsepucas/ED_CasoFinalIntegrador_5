@@ -15,7 +15,7 @@ public class MainGUI extends JFrame {
     public MainGUI() {
         super("Sistema de Análisis Genómico de la UAX \uD83D\uDE00");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(600, 400);  // Ajustado para acomodar más botones
+        setSize(600, 400);
         setLayout(new FlowLayout());
 
         btnConteoGenes = new JButton("Conteo de Genes");
