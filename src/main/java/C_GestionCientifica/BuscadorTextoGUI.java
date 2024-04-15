@@ -16,6 +16,12 @@ public class BuscadorTextoGUI {
         private JFileChooser fileChooser;
         private JLabel resultLabel;
 
+        public BuscadorTextoGUI() {
+            super("Buscador de Texto");
+            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+            setSize(500, 400);
+            setLayout(new BorderLayout());
+
 
 
     }
