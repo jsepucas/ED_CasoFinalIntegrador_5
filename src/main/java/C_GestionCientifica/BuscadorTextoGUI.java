@@ -50,6 +50,13 @@ public class BuscadorTextoGUI {
                 }
             });
 
+            JPanel panel = new JPanel();
+            panel.add(loadButton);
+            panel.add(new JLabel("Buscar Palabra:"));
+            panel.add(searchField);
+            panel.add(searchButton);
 
 
-    }
+
+
+        }
