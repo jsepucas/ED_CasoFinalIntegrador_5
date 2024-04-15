@@ -45,4 +45,19 @@ public class FechaGUI extends JFrame {
                 JOptionPane.showMessageDialog(this, "Formato de fecha no válido. Use YYYY-MM-DD.");
             }
         });
+
+        sortButton.addActionListener(e -> {
+            fechas.sort(Fecha.compararPorFecha);
+            actualizarTabla();
+        });
+
+        JPanel inputPanel = new JPanel();
+        inputPanel.add(new JLabel("Fecha (YYYY-MM-DD):"));
+        inputPanel.add(fechaField);
+        inputPanel.add(new JLabel("Descripción:"));
+        inputPanel.add(descripcionField);
+        inputPanel.add(addButton);
+        inputPanel.add(editButton);
+        inputPanel.add(deleteButton);
+        inputPanel.add(sortButton);
 }
