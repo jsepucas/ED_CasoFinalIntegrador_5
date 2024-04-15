@@ -60,4 +60,23 @@ public class FechaGUI extends JFrame {
         inputPanel.add(editButton);
         inputPanel.add(deleteButton);
         inputPanel.add(sortButton);
+
+        add(inputPanel, BorderLayout.NORTH);
+        add(new JScrollPane(fechasTable), BorderLayout.CENTER);
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    private void actualizarTabla() {
+        tableModel.setRowCount(0);
+        for (Fecha fecha : fechas) {
+            tableModel.addRow(new Object[]{fecha.getFecha(), fecha.getDescripcion()});
+        }
+    }
+
+    public static void main(String[] args) {
+        new GestorFechasGUI();
+    }
+
 }
