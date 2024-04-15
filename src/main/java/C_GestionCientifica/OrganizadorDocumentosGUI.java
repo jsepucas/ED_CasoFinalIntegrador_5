@@ -20,3 +20,15 @@ public class OrganizadorDocumentosGUI extends JFrame {
         sortButton = new JButton("Ordenar");
         fileChooser = new JFileChooser();
 
+        loadButton.addActionListener(e -> {
+            int returnVal = fileChooser.showOpenDialog(OrganizadorDocumentosGUI.this);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                try {
+                    List<String> lines = Files.readAllLines(fileChooser.getSelectedFile().toPath());
+                    textArea.setText(String.join("\n", lines));
+                } catch (IOException ex) {
+                    JOptionPane.showMessageDialog(this, "Error al cargar el archivo.");
+                }
+            }
+        });
+
