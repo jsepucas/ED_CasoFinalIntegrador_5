@@ -11,3 +11,9 @@ public class CalculoDeCombinaciones {
         generarCombinacionesRecursivo("", bases, n, result);
         return result;
     }
+
+private static void generarCombinacionesRecursivo(String current, String[] bases, int n, List<sTRING> result) {
+        if (current.length() == n) {
+            result.add(current);
+            return;
+        }
