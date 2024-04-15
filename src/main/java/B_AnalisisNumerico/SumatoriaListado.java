@@ -1,5 +1,8 @@
 package B_AnalisisNumerico;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SumatoriaListado {
 
     public static int sumatoriaRecursiva(int n) {
