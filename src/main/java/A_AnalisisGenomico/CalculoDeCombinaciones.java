@@ -1,4 +1,4 @@
 package A_AnalisisGenomico;
 
-public class CalculoDeCombinaciones {
-}
+import java.util.ArrayList;
+import java.util.List;

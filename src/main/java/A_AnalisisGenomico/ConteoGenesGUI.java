@@ -31,6 +31,7 @@ public class ConteoGenesGUI extends JFrame {
         add(countButton);
         add(resultLabel);
 
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
