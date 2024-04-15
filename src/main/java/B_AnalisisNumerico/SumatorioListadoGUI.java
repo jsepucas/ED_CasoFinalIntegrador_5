@@ -56,3 +56,12 @@ public class SumatoriaListadoGUI extends JFrame {
         add(inputFieldHasta);
         add(listNumbersButton);
         add(new JScrollPane(listResultArea));
+
+        setLocationRelativeTo(null);
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new SumatoriaListadoGUI();
+    }
+}
