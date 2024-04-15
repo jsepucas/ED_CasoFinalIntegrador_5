@@ -17,4 +17,14 @@ public class CalculoPotenciasMaximos {
             return Math.max(datos[indice], encontrarMaximo(datos, indice - 1));
         }
     }
+
+    public static void main(String[] args) {
+        int potencia = calcularPotencia(2, 8);
+        System.out.println("2 elevado a la 8 es: " + potencia);
+
+        int[] datos = {3, 6, 2, 8, 5};
+        int maximo = encontrarMaximo(datos, datos.length - 1);
+        System.out.println("El máximo es: " + maximo);
+    }
+}
 }
