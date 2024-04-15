@@ -13,3 +13,10 @@ public class OrganizadorDocumentosGUI extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 300);
         setLayout(new BorderLayout());
+
+        textArea = new JTextArea();
+        loadButton = new JButton("Cargar");
+        saveButton = new JButton("Guardar");
+        sortButton = new JButton("Ordenar");
+        fileChooser = new JFileChooser();
+
