@@ -16,4 +16,17 @@ public class CalculoPotenciasMaximosGUI {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500, 200);
         setLayout(new FlowLayout());
+
+        baseField = new JTextField(5);
+        exponenteField = new JTextField(5);
+        calculatePowerButton = new JButton("Calcular Potencia");
+        powerResultLabel = new JLabel("Resultado potencia aquí");
+        calculatePowerButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                int base = Integer.parseInt(baseField.getText());
+                int exponente = Integer.parseInt(exponenteField.getText());
+                int result = CalculoPotenciasMaximos.calcularPotencia(base, exponente);
+                powerResultLabel.setText("Potencia: " + result);
+            }
+        });
 }
