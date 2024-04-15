@@ -51,7 +51,7 @@ public class OrganizadorDocumentosGUI extends JFrame {
 
         sortButton.addActionListener(e -> {
             String[] lines = textArea.getText().split("\n");
-            Arrays.sort(lines);
+                Arrays.sort(lines);
             textArea.setText(String.join("\n", lines));
         });
 

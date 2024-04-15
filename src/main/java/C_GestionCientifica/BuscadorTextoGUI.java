@@ -3,7 +3,9 @@ package C_GestionCientifica;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
@@ -14,11 +16,12 @@ public class BuscadorTextoGUI extends JFrame {
     private JButton loadButton, searchButton;
     private JFileChooser fileChooser;
     private JLabel resultLabel;
+    private Map<String, java.util.List<Integer>> invertedIndex;
 
     public BuscadorTextoGUI() {
         super("Buscador de Texto");
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(600, 400);
+        setSize(625, 400);
         setLayout(new BorderLayout());
 
         textArea = new JTextArea();
@@ -27,13 +30,15 @@ public class BuscadorTextoGUI extends JFrame {
         searchButton = new JButton("Buscar Palabra");
         resultLabel = new JLabel("Resultados de la búsqueda aparecerán aquí");
         fileChooser = new JFileChooser();
+        invertedIndex = new HashMap<String, java.util.List<Integer>>();
 
         loadButton.addActionListener(e -> {
             int returnVal = fileChooser.showOpenDialog(BuscadorTextoGUI.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 try {
-                    List<String> lines = Files.readAllLines(fileChooser.getSelectedFile().toPath());
+                    java.util.List<String> lines = Files.readAllLines(fileChooser.getSelectedFile().toPath());
                     textArea.setText(String.join("\n", lines));
+                    buildInvertedIndex(lines);
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this, "Error al cargar el archivo.");
                 }
@@ -41,19 +46,11 @@ public class BuscadorTextoGUI extends JFrame {
         });
 
         searchButton.addActionListener(e -> {
-            if (fileChooser.getSelectedFile() != null) {
-                try {
-                    List<Integer> lineNumbers = BuscadorTexto.buscarPalabra(fileChooser.getSelectedFile().getPath(), searchField.getText());
-                    if (lineNumbers.isEmpty()) {
-                        resultLabel.setText("La palabra no fue encontrada en el documento.");
-                    } else {
-                        resultLabel.setText("Palabra encontrada en líneas: " + lineNumbers);
-                    }
-                } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(this, "Error al buscar en el documento.");
-                }
+            String word = searchField.getText();
+            if (invertedIndex.containsKey(word)) {
+                resultLabel.setText("Palabra encontrada en líneas: " + invertedIndex.get(word));
             } else {
-                JOptionPane.showMessageDialog(this, "Por favor, cargue un documento primero.");
+                resultLabel.setText("La palabra no fue encontrada en el documento.");
             }
         });
 
@@ -69,6 +66,20 @@ public class BuscadorTextoGUI extends JFrame {
 
         setLocationRelativeTo(null);
         setVisible(true);
+    }
+
+    private void buildInvertedIndex(java.util.List<String> lines) {
+        invertedIndex.clear();
+        for (int i = 0; i < lines.size(); i++) {
+            String[] words = lines.get(i).split("\\W+");
+            for (String word : words) {
+                word = word.toLowerCase();
+                if (!invertedIndex.containsKey(word)) {
+                    invertedIndex.put(word, new ArrayList<Integer>());
+                }
+                invertedIndex.get(word).add(i + 1);
+            }
+        }
     }
 
     public static void main(String[] args) {
