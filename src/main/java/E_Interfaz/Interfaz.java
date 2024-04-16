@@ -11,8 +11,8 @@ public class Interfaz {
     public static void styleButton(JButton button) {
         button.setBackground(new Color(255, 255, 255)); // Color blanco
         button.setForeground(new Color(0, 0, 0)); // Texto en negro
-        // Puedes añadir más estilos como bordes, fuentes, etc.
-        button.setFocusPainted(false); // Para quitar el borde de enfoque
+
+        button.setFocusPainted(false);
         button.setFont(new Font("Arial", Font.BOLD, 12));
     }
 
@@ -25,22 +25,21 @@ public class Interfaz {
         return null;
     }
 
-    // Método para aplicar un estilo general a la ventana
     public static void styleFrame(JFrame frame) {
-        frame.getContentPane().setBackground(new Color(240, 240, 240)); // Un color de fondo claro
-        // Otros estilos globales
+        frame.getContentPane().setBackground(new Color(214, 234, 248));
+
     }
 
     // Método para crear y estilo de una etiqueta con el logo
     public static JLabel createLogoLabel() {
-        ImageIcon logoIcon = new ImageIcon("src/main/resources/uax.jpg");
+        ImageIcon logoIcon = new ImageIcon("src/main/resources/uax2.png");
         if (logoIcon != null) {
             Image image = logoIcon.getImage(); // transform it
-            Image newimg = image.getScaledInstance(420, 150,  Image.SCALE_AREA_AVERAGING); // scale it the smooth way
+            Image newimg = image.getScaledInstance(380, 150,  Image.SCALE_AREA_AVERAGING); // scale it the smooth way
             logoIcon = new ImageIcon(newimg);
             return new JLabel(logoIcon);
         } else {
-            return new JLabel("uax.jpg ");
+            return new JLabel("uax2.png ");
         }
     }
 
