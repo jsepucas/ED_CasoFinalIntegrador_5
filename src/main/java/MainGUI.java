@@ -28,7 +28,7 @@ public class MainGUI extends JFrame {
         setSize(525, 340);
         setLayout(new FlowLayout());
 
-        Interfaz.styleFrame(this);
+        Interfaz.styleFrame(this);º
 
         btnConteoGenes = new JButton("Conteo de Genes 0\uFE0F⃣  1\uFE0F⃣  2\uFE0F⃣   3\uFE0F⃣");
 
